@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nousagi Members</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="Nousagi Logo" class="logo">
+    <nav class="nav">
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#members">Members</a></li>
+      </ul>
+    </nav>
+    <!-- Dark/Light Mode Toggle Button -->
+    <button id="mode-toggle" class="light-mode-toggle">Toggle Mode</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Nousagi</h1>
+    <p>A community of passionate individuals united under the Nousagi banner!</p>
+    <a href="#members" class="btn btn-primary">Meet Our Members</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2>About Nousagi</h2>
+    <p>Nousagi Members is a community group focused on collaboration, fun, and supporting one another. We believe in creating a positive and welcoming space for all.</p>
+  </section>
+
+  <!-- Members Section -->
+  <section id="members" class="members container">
+    <h2>Our Members</h2>
+    <div class="member-list">
+      <!-- Member 1 -->
+      <div class="member">
+        <div class="member-front">
+          <img src="member1.jpg" alt="Member 1">
+          <h3>Member Name</h3>
+          <p>Role or Description</p>
+        </div>
+        <div class="member-back">
+          <p>Additional Information</p>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="member">
+        <div class="member-front">
+          <img src="member2.jpg" alt="Member 2">
+          <h3>Member Name</h3>
+          <p>Role or Description</p>
+        </div>
+        <div class="member-back">
+          <p>Additional Information</p>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="member">
+        <div class="member-front">
+          <img src="member3.jpg" alt="Member 3">
+          <h3>Member Name</h3>
+          <p>Role or Description</p>
+        </div>
+        <div class="member-back">
+          <p>Additional Information</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Nousagi Members. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Animations, Dark/Light Mode Toggle, and Modal Popup -->
+  <script>
+    // Remove loading spinner after page load
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // Dark/Light Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+
+    // Modal Popup Functionality
+    const modal = document.getElementById('modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Trigger modal to appear (Example for any specific section/event)
+    setTimeout(() => {
+      modal.classList.add('active');
+    }, 3000); // Show the modal after 3 seconds
+
+    // Close the modal when the close button is clicked
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+    });
+  </script>
+  
+  <!-- Custom Cursor HTML element -->
+  <div class="cursor"></div>
+
+</body>
+</html>
