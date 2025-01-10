@@ -12,31 +12,9 @@ body {
     cursor: url('custom-cursor.png'), auto; /* Custom Cursor */
 }
 
-/* Custom Cursor Styling */
-.cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #4caf50;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.15s, height 0.15s, background-color 0.2s;
-}
-
-/* Custom Cursor Hover Effects */
-a:hover, .btn:hover, .member:hover {
-    cursor: url('custom-cursor-click.png'), auto; /* Change cursor image when hovering over links/buttons */
-}
-
-/* Hover effects for cursor on buttons */
-.btn:hover {
-    cursor: url('custom-cursor-click.png'), auto;
-}
-
-/* Hover effects for member cards */
-.member:hover {
-    cursor: url('custom-cursor-click.png'), auto;
+/* Ensure the custom cursor remains consistent */
+a, .btn, .member {
+    cursor: url('custom-cursor.png'), auto;
 }
 
 /* Container */
@@ -120,13 +98,12 @@ a {
 
 /* Hero Section with Animations */
 .hero {
-    background: linear-gradient(45deg, #1b1b1b, #4caf50);
+    background: url('Harewire.gif') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire section */
     text-align: center;
     padding: 100px 20px;
     position: relative;
     overflow: hidden;
-    animation: backgroundShift 12s ease infinite;
-    background-size: 400% 400%; /* Parallax effect */
 }
 
 .hero::after {
@@ -166,18 +143,6 @@ a {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes backgroundShift {
-    0% {
-        background: linear-gradient(45deg, #1b1b1b, #4caf50);
-    }
-    50% {
-        background: linear-gradient(45deg, #1b1b1b, #00c8ff);
-    }
-    100% {
-        background: linear-gradient(45deg, #1b1b1b, #4caf50);
     }
 }
 
@@ -230,7 +195,6 @@ a {
     box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
 }
 
-/* Member card content for flip */
 .member-front, .member-back {
     position: absolute;
     width: 100%;
@@ -277,39 +241,6 @@ a {
     margin: 0;
 }
 
-/* Light Mode Styles for Member Card */
-body.light-mode .member {
-    background-color: #ffffff;
-    border: 2px solid #00c8ff;
-}
-
-body.light-mode .member-front {
-    background-color: #ffffff;
-}
-
-body.light-mode .member-back {
-    background-color: #f4f4f4;
-}
-
-body.light-mode .member img {
-    border: 2px solid #00c8ff;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
-}
-
-body.light-mode .member h3 {
-    color: #121212;
-}
-
-body.light-mode .member p {
-    color: #555555;
-}
-
-/* Hover Effect Adjustments */
-body.light-mode .member:hover {
-    box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
-}
-
-
 /* Footer Section */
 .footer {
     background-color: #1b1b1b;
@@ -338,6 +269,7 @@ body.light-mode .member:hover {
     background-color: #00c8ff;
     box-shadow: 0 0 15px #00c8ff;
 }
+
 
 /* Loading Spinner */
 body::before {
